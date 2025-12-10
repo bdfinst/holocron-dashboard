@@ -1,0 +1,14 @@
+node_modules
+.history
+build
+dist
+coverage
+.eslintcache
+.DS_Store
+mb.pid
+.vscode
+.idea
+.cache
+screenshots
+videos
+docs/app

@@ -1,0 +1,18 @@
+FROM node:16.19.1
+
+WORKDIR /app
+
+COPY package.json ./
+COPY package-lock.json ./
+COPY .babelrc ./
+COPY webpack.config.mjs ./
+COPY tsconfig.json ./
+
+COPY public ./public
+COPY src ./src
+
+RUN npm ci
+
+EXPOSE 3000
+
+CMD [ "npm", "run", "start"]
