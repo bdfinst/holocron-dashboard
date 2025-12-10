@@ -1,29 +1,40 @@
 {
   "compilerOptions": {
-    "outDir": "./built",
-    "sourceMap": true,
-    "noImplicitAny": false,
-    "module": "commonjs",
-    "target": "es5",
-    "lib": ["esnext", "dom", "dom.iterable"],
-    "removeComments": true,
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react-jsx",
-    "allowJs": false,
-    "baseUrl": "./",
-    "esModuleInterop": true,
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node",
-    "downlevelIteration": true,
-    "types": ["node", "@testing-library/jest-dom", "jest"],
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": false,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Additional */
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "baseUrl": "./",
     "paths": {
       "*": ["src/*"]
-    }
+    },
+    "types": ["vite/client", "node", "@testing-library/jest-dom", "jest"]
   },
   "include": [
-    "./src/**/*",
-    "webpack.config.mjs",
+    "src",
+    "vite.config.ts",
     "jestSetup.ts",
     "jest.config.ts"
-  ]
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

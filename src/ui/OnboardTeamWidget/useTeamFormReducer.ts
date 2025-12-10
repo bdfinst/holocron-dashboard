@@ -451,7 +451,7 @@ const getReducer = ({
           ...state,
           teamAdmins: {
             value: action.teamAdmins,
-            error: !isValid,
+            error: false,
             helperText: '',
           },
         })

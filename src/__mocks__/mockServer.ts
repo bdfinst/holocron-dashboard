@@ -13,7 +13,7 @@ import MockCodeAnalysisProjects from './CodeAnalysisProjects'
 
 export default function mockServer(environment = 'development') {
   const shouldCreateServer =
-    process.env.NODE_ENV === environment && !process.env.REACT_APP_IN_DOCKER
+    import.meta.env.MODE === environment && !import.meta.env.VITE_IN_DOCKER
   if (shouldCreateServer) {
     return createServer({
       routes() {

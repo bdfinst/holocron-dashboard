@@ -24,6 +24,15 @@ module.exports = {
       files: ['**/*.js'],
       parser: '@babel/eslint-parser',
     },
+    {
+      files: ['vite.config.ts'],
+      parserOptions: {
+        project: './tsconfig.node.json',
+      },
+      rules: {
+        'import/no-unresolved': 'off',
+      },
+    },
   ],
   env: {
     'jest/globals': true,

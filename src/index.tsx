@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import App from 'App'
 
-if (process.env.NODE_ENV === 'development') {
+if (import.meta.env.DEV) {
   import('./__mocks__/mockServer').then(module => {
     const { default: mockServer } = module
     mockServer()
@@ -9,5 +9,5 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const container = document.getElementById('root')
-const root = createRoot(container)
+const root = createRoot(container!)
 root.render(<App />)
